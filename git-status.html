@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uso de `git status`</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Usando <code>git status</code> para Mostrar el Estado Actual de la Rama</h1>
+    <p>El comando <code>git status</code> es una herramienta fundamental en Git que permite visualizar el estado actual de la rama en la que te encuentras. Este comando muestra información detallada sobre los cambios que hay sin commitear, los archivos que están en el área de preparación y los archivos que no están siendo rastreados. A continuación, se presenta una guía detallada sobre el uso de <code>git status</code>, su importancia en el flujo de trabajo de desarrollo y buenas prácticas para utilizar este comando de manera efectiva.</p>
+    
+    <h2>¿Qué es <code>git status</code>?</h2>
+    <p>El comando <code>git status</code> se utiliza para obtener una visión general del estado actual del repositorio. Este comando muestra información sobre los cambios que han sido realizados pero no confirmados, los archivos que han sido añadidos al área de preparación, y los archivos que no están siendo rastreados por Git. Es una herramienta esencial para mantener un seguimiento preciso de las modificaciones en el repositorio y asegurar que todos los cambios deseados se hayan registrado correctamente antes de hacer un commit.</p>
+
+    <h2>Ventajas de Usar <code>git status</code></h2>
+    <ul>
+      <li><strong>Visibilidad de Cambios:</strong> Proporciona una visión clara de los cambios realizados en el repositorio, facilitando la gestión y el seguimiento de los mismos.</li>
+      <li><strong>Prevención de Errores:</strong> Ayuda a identificar archivos que han sido modificados pero no añadidos al área de preparación, previniendo posibles errores antes de realizar un commit.</li>
+      <li><strong>Gestión Eficiente:</strong> Facilita la organización y gestión de los archivos en el repositorio, asegurando que todos los cambios relevantes se incluyan en los commits.</li>
+    </ul>
+
+    <h2>Uso Básico de <code>git status</code></h2>
+    <p>Para utilizar <code>git status</code>, sigue estos pasos:</p>
+    <ol>
+      <li>
+        <strong>Abrir la Terminal o Símbolo del sistema:</strong>
+        <ul>
+          <li>En sistemas Unix (Linux, macOS), abre una terminal.</li>
+          <li>En Windows, utiliza PowerShell o el Símbolo del sistema.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Navegar al Directorio del Proyecto:</strong>
+        <pre><code>cd ruta/a/tu/proyecto</code></pre>
+      </li>
+      <li>
+        <strong>Ejecutar <code>git status</code>:</strong>
+        <pre><code>git status</code></pre>
+        <p>Este comando muestra el estado actual del repositorio, incluyendo los archivos modificados, los archivos en el área de preparación y los archivos no rastreados.</p>
+      </li>
+    </ol>
+
+    <h2>Interpretación de la Salida de <code>git status</code></h2>
+    <p>La salida del comando <code>git status</code> proporciona información detallada sobre el estado del repositorio. Aquí tienes una guía para interpretar la salida:</p>
+    <ul>
+      <li><strong>Rama Actual:</strong> La primera línea muestra la rama en la que te encuentras actualmente.</li>
+      <li><strong>Archivos Modificados:</strong> Lista los archivos que han sido modificados pero no añadidos al área de preparación.</li>
+      <li><strong>Archivos en el Área de Preparación:</strong> Muestra los archivos que han sido añadidos al área de preparación y están listos para ser confirmados.</li>
+      <li><strong>Archivos No Rastreado:</strong> Indica los archivos que no están siendo rastreados por Git.</li>
+    </ul>
+
+    <h2>Integrar <code>git status</code> en el Flujo de Trabajo</h2>
+    <p>El uso de <code>git status</code> es crucial en el flujo de trabajo en Git. Aquí tienes un ejemplo práctico de cómo se integra <code>git status</code> en un ciclo de desarrollo típico:</p>
+    <ol>
+      <li>
+        <strong>Inicializar el Repositorio:</strong>
+        <pre><code>git init</code></pre>
+      </li>
+      <li>
+        <strong>Crear y Modificar Archivos:</strong>
+        <pre><code># Crea y modifica archivos en tu proyecto...</code></pre>
+      </li>
+      <li>
+        <strong>Verificar el Estado de los Archivos:</strong>
+        <pre><code>git status</code></pre>
+        <p>Revisa los archivos modificados, en el área de preparación y no rastreados.</p>
+      </li>
+      <li>
+        <strong>Añadir Archivos al Área de Preparación:</strong>
+        <pre><code>git add archivo1 archivo2</code></pre>
+      </li>
+      <li>
+        <strong>Confirmar los Cambios:</strong>
+        <pre><code>git commit -m "Descripción de los cambios"</code></pre>
+      </li>
+      <li>
+        <strong>Verificar el Estado Final:</strong>
+        <pre><code>git status</code></pre>
+        <p>Confirma que no hay cambios pendientes después del commit.</p>
+      </li>
+    </ol>
+
+    <h2>Ejemplos Prácticos del Uso de <code>git status</code></h2>
+    <p>A continuación se presentan algunos ejemplos prácticos del uso de <code>git status</code>:</p>
+    <ul>
+      <li><strong>Comprobar el Estado Después de Modificar Archivos:</strong>
+        <pre><code># Modifica algunos archivos en tu proyecto...
+git status</code></pre>
+        <p>Este comando mostrará los archivos modificados y no rastreados.</p>
+      </li>
+      <li><strong>Verificar el Estado Antes de Realizar un Commit:</strong>
+        <pre><code>git add archivo1
+git status</code></pre>
+        <p>Verifica que los archivos añadidos estén en el área de preparación antes de confirmar los cambios.</p>
+      </li>
+      <li><strong>Comprobar el Estado Después de Realizar un Commit:</strong>
+        <pre><code>git commit -m "Descripción de los cambios"
+git status</code></pre>
+        <p>Asegúrate de que no hay cambios pendientes después de confirmar los cambios.</p>
+      </li>
+    </ul>
+
+    <h2>Buenas Prácticas con <code>git status</code></h2>
+    <ul>
+      <li><strong>Ejecuta <code>git status</code> Frecuentemente:</strong> Realiza este comando con regularidad para mantener un seguimiento preciso de los cambios en tu repositorio.</li>
+      <li><strong>Revisa los Cambios Antes de Confirmar:</strong> Utiliza <code>git status</code> para verificar que todos los cambios deseados estén en el área de preparación antes de hacer un commit.</li>
+      <li><strong>Mantén el Repositorio Limpio:</strong> Asegúrate de que no haya archivos no rastreados que deban ser añadidos al repositorio.</li>
+      <li><strong>Usa Mensajes Descriptivos:</strong> Al hacer un commit, proporciona mensajes descriptivos que expliquen los cambios realizados, facilitando la revisión y el seguimiento del historial de cambios.</li>
+    </ul>
+
+    <h2>Consejos Avanzados para <code>git status</code></h2>
+    <p>Para aprovechar al máximo el comando <code>git status</code>, considera estos consejos avanzados:</p>
+    <ul>
+      <li><strong>Combina <code>git status</code> con Otros Comandos:</strong> Usa <code>git status</code> en combinación con comandos como <code>git diff</code> para obtener una visión más detallada de los cambios realizados.</li>
+      <li><strong>Personaliza la Salida de <code>git status</code>:</strong> Utiliza la opción <code>--short</code> para una salida más compacta y fácil de leer.</li>
+      <li><strong>Integra <code>git status</code> en Tu Editor:</strong> Configura tu editor de texto o entorno de desarrollo integrado (IDE) para mostrar automáticamente el estado del repositorio, facilitando la gestión de los cambios.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+    <p>El comando <code>git status</code> es esencial para mantener un seguimiento preciso de los cambios en tu repositorio. Al utilizar <code>git status</code> regularmente, puedes asegurarte de que todos los cambios relevantes se incluyan en los commits, prevenir errores y mantener tu repositorio limpio y organizado. Siguiendo las buenas prácticas mencionadas y aprovechando los consejos avanzados, podrás gestionar eficazmente el estado de tu repositorio y colaborar de manera más eficiente con tu equipo.</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

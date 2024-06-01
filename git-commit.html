@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uso de `git commit -m "<mensaje>"`</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Usando <code>git commit -m "&lt;mensaje&gt;"</code> para Confirmar Cambios Realizados</h1>
+    <p>El comando <code>git commit -m "&lt;mensaje&gt;"</code> es una parte esencial del flujo de trabajo en Git. Este comando permite confirmar los cambios realizados en el repositorio local, asociando un mensaje descriptivo que facilita la comprensión del historial de cambios. A continuación, se presenta una guía detallada sobre el uso de <code>git commit</code>, su importancia en el desarrollo colaborativo y buenas prácticas para redactar mensajes de commit efectivos.</p>
+    
+    <h2>¿Qué es <code>git commit</code>?</h2>
+    <p>El comando <code>git commit</code> se utiliza para guardar los cambios en el historial del repositorio. Cuando haces un commit, Git crea un nuevo punto en el historial del proyecto, registrando los cambios realizados y el mensaje proporcionado. Este mensaje debe describir brevemente los cambios realizados, ayudando a otros desarrolladores (o a ti mismo en el futuro) a entender qué modificaciones se hicieron y por qué.</p>
+
+    <h2>Ventajas de Usar <code>git commit -m "&lt;mensaje&gt;"</code></h2>
+    <ul>
+      <li><strong>Registro Claro de Cambios:</strong> Mantiene un historial detallado y claro de los cambios realizados, facilitando la revisión y el seguimiento del código.</li>
+      <li><strong>Colaboración Efectiva:</strong> Ayuda a los equipos de desarrollo a entender qué cambios se han realizado y por qué, mejorando la comunicación y la colaboración.</li>
+      <li><strong>Facilita la Depuración:</strong> Permite identificar y aislar problemas más fácilmente al tener un registro preciso de los cambios realizados en el proyecto.</li>
+    </ul>
+
+    <h2>Uso Básico de <code>git commit -m "&lt;mensaje&gt;"</code></h2>
+    <p>Para utilizar <code>git commit</code>, sigue estos pasos:</p>
+    <ol>
+      <li>
+        <strong>Abrir la Terminal o Símbolo del sistema:</strong>
+        <ul>
+          <li>En sistemas Unix (Linux, macOS), abre una terminal.</li>
+          <li>En Windows, utiliza PowerShell o el Símbolo del sistema.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Navegar al Directorio del Proyecto:</strong>
+        <pre><code>cd ruta/a/tu/proyecto</code></pre>
+      </li>
+      <li>
+        <strong>Agregar los Cambios al Área de Preparación:</strong>
+        <pre><code>git add .</code></pre>
+        <p>Este comando añade todos los archivos modificados al área de preparación, preparando los cambios para ser confirmados.</p>
+      </li>
+      <li>
+        <strong>Ejecutar <code>git commit -m "&lt;mensaje&gt;"</code>:</strong>
+        <pre><code>git commit -m "Descripción breve de los cambios"</code></pre>
+        <p>Este comando confirma los cambios en el repositorio local con el mensaje proporcionado.</p>
+      </li>
+    </ol>
+
+    <h2>Buenas Prácticas para Mensajes de Commit</h2>
+    <ul>
+      <li><strong>Sea Breve pero Descriptivo:</strong> Un buen mensaje de commit debe ser lo suficientemente descriptivo para entender qué cambios se hicieron, pero breve para ser leído rápidamente.</li>
+      <li><strong>Utilice el Tiempo Imperativo:</strong> Es una convención común escribir los mensajes de commit en tiempo imperativo, como "Añadir funcionalidad X" en lugar de "Añadido funcionalidad X".</li>
+      <li><strong>Incluya Referencias:</strong> Si el commit está relacionado con un ticket de trabajo o un problema específico, inclúyalo en el mensaje para facilitar el seguimiento.</li>
+      <li><strong>Describa el Por Qué y el Qué:</strong> No solo describa qué cambios se hicieron, sino también por qué se hicieron. Esto proporciona contexto adicional que puede ser útil en el futuro.</li>
+    </ul>
+
+    <h2>Ejemplos de Uso</h2>
+    <p>A continuación se presentan algunos ejemplos prácticos del uso de <code>git commit -m "&lt;mensaje&gt;"</code>:</p>
+    <ul>
+      <li><strong>Agregar un nuevo archivo:</strong>
+        <pre><code>git add nuevo_archivo.txt
+git commit -m "Añadir nuevo archivo de configuración"</code></pre>
+      </li>
+      <li><strong>Corregir un error:</strong>
+        <pre><code>git add archivo_modificado.py
+git commit -m "Corregir error en la función de autenticación"</code></pre>
+      </li>
+      <li><strong>Actualizar documentación:</strong>
+        <pre><code>git add README.md
+git commit -m "Actualizar documentación con instrucciones de instalación"</code></pre>
+      </li>
+    </ul>
+
+    <h2>Comandos Relacionados</h2>
+    <p>Además de <code>git commit -m "&lt;mensaje&gt;"</code>, hay otros comandos de Git relacionados que pueden ser útiles:</p>
+    <ul>
+      <li><strong><code>git commit --amend</code>:</strong> Permite modificar el último commit realizado, incluyendo cambios adicionales o editando el mensaje del commit.</li>
+      <li><strong><code>git log</code>:</strong> Muestra el historial de commits del repositorio, permitiendo revisar mensajes y cambios anteriores.</li>
+      <li><strong><code>git diff</code>:</strong> Muestra las diferencias entre los cambios realizados y el último commit, ayudando a entender qué se ha modificado.</li>
+    </ul>
+
+    <h2>Integración en el Flujo de Trabajo</h2>
+    <p>El uso de <code>git commit</code> es una parte integral del flujo de trabajo en Git. Aquí tienes un ejemplo de cómo se integra en un ciclo de desarrollo típico:</p>
+    <ol>
+      <li><strong>Clonar el Repositorio:</strong>
+        <pre><code>git clone https://github.com/usuario/proyecto.git</code></pre>
+      </li>
+      <li><strong>Crear una Rama para una Nueva Funcionalidad:</strong>
+        <pre><code>git checkout -b nueva-funcionalidad</code></pre>
+      </li>
+      <li><strong>Desarrollar la Nueva Funcionalidad:</strong>
+        <pre><code># Realiza cambios en tu código...
+git add .
+git commit -m "Añadir nueva funcionalidad X"</code></pre>
+      </li>
+      <li><strong>Fusionar Cambios en la Rama Principal:</strong>
+        <pre><code>git checkout main
+git merge nueva-funcionalidad</code></pre>
+      </li>
+      <li><strong>Empujar Cambios al Repositorio Remoto:</strong>
+        <pre><code>git push origin main</code></pre>
+      </li>
+    </ol>
+
+    <h2>Consejos Avanzados</h2>
+    <p>Para llevar tu uso de Git al siguiente nivel, considera estos consejos avanzados:</p>
+    <ul>
+      <li><strong>Usa Commit Firmados:</strong> Los commits firmados con GPG añaden una capa adicional de seguridad, verificando la autenticidad del autor.</li>
+      <li><strong>Utiliza Ganchos de Commit:</strong> Los ganchos pre-commit pueden automatizar verificaciones de calidad de código antes de permitir que se realice un commit.</li>
+      <li><strong>Commit por Característica:</strong> Realiza commits separados para cada nueva característica o corrección de errores para mantener el historial de cambios claro y organizado.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+    <p>El comando <code>git commit -m "&lt;mensaje&gt;"</code> es fundamental para registrar los cambios realizados en un proyecto Git. Al proporcionar un mensaje descriptivo, ayudas a mantener un historial claro y organizado, facilitando la colaboración y la revisión del código. Siguiendo las buenas prácticas mencionadas y utilizando los comandos relacionados, puedes mejorar significativamente la gestión de tu proyecto y la comunicación con otros desarrolladores. No olvides aprovechar las herramientas y estrategias avanzadas para sacar el máximo provecho de Git en tu flujo de trabajo.</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

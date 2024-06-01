@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Comandos y Procedimientos en Git</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #eee;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        li:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guía de Comandos y Procedimientos en Git</h1>
+        <ul>
+            <li><a href="#init">git init</a></li>
+            <li><a href="#clone">git clone</a></li>
+            <li><a href="#status">git status</a></li>
+            <li><a href="#add">git add</a></li>
+            <li><a href="#commit">git commit</a></li>
+            <li><a href="#push">git push</a></li>
+            <li><a href="#pull">git pull</a></li>
+            <li><a href="#branch">git branch</a></li>
+            <li><a href="#merge">git merge</a></li>
+            <li><a href="#checkout">git checkout</a></li>
+        </ul>
+
+        <section id="init">
+            <h2>git init</h2>
+            <p>Inicializa un nuevo repositorio Git en el directorio actual.</p>
+            <pre><code>git init</code></pre>
+            <p>Este comando crea un nuevo subdirectorio llamado <code>.git</code> que contiene todos los archivos necesarios del repositorio.</p>
+        </section>
+
+        <section id="clone">
+            <h2>git clone</h2>
+            <p>Clona un repositorio existente en un nuevo directorio.</p>
+            <pre><code>git clone &lt;url_del_repositorio&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git clone https://github.com/user/repo.git</code></pre>
+        </section>
+
+        <section id="status">
+            <h2>git status</h2>
+            <p>Muestra el estado del repositorio actual, incluyendo los cambios que no han sido confirmados.</p>
+            <pre><code>git status</code></pre>
+        </section>
+
+        <section id="add">
+            <h2>git add</h2>
+            <p>Añade archivos al área de preparación (staging area).</p>
+            <pre><code>git add &lt;nombre_archivo&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git add archivo.txt</code></pre>
+            <p>Para añadir todos los archivos:</p>
+            <pre><code>git add .</code></pre>
+        </section>
+
+        <section id="commit">
+            <h2>git commit</h2>
+            <p>Guarda los cambios en el repositorio local con un mensaje descriptivo.</p>
+            <pre><code>git commit -m "mensaje del commit"</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git commit -m "Añadir archivo de ejemplo"</code></pre>
+        </section>
+
+        <section id="push">
+            <h2>git push</h2>
+            <p>Sube los cambios confirmados al repositorio remoto.</p>
+            <pre><code>git push origin &lt;nombre_rama&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git push origin main</code></pre>
+        </section>
+
+        <section id="pull">
+            <h2>git pull</h2>
+            <p>Actualiza el repositorio local con los cambios del repositorio remoto.</p>
+            <pre><code>git pull</code></pre>
+            <p>Este comando combina los comandos <code>git fetch</code> y <code>git merge</code>.</p>
+        </section>
+
+        <section id="branch">
+            <h2>git branch</h2>
+            <p>Lista todas las ramas locales en el repositorio actual.</p>
+            <pre><code>git branch</code></pre>
+            <p>Para crear una nueva rama:</p>
+            <pre><code>git branch &lt;nombre_rama&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git branch nueva-rama</code></pre>
+        </section>
+
+        <section id="merge">
+            <h2>git merge</h2>
+            <p>Combina cambios de una rama en la rama actual.</p>
+            <pre><code>git merge &lt;nombre_rama&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git merge feature-branch</code></pre>
+        </section>
+
+        <section id="checkout">
+            <h2>git checkout</h2>
+            <p>Cambia a una rama existente o crea una nueva rama y cambia a ella.</p>
+            <pre><code>git checkout &lt;nombre_rama&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git checkout main</code></pre>
+            <p>Para crear una nueva rama y cambiar a ella:</p>
+            <pre><code>git checkout -b &lt;nombre_rama_nueva&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git checkout -b nueva-rama</code></pre>
+        </section>
+    </div>
+</body>
+</html>

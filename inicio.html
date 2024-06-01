@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guía de Git - para práctica</title>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/articulos.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Enlace al CSS de Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace a FontAwesome para los íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!--Header - menu-->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Git<b>Wiki</b></h1>
+            </div>
+            <div class="menu" id="show-menu">
+                <nav>
+                    <ul>
+                        <li><a href="inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+                        <li class="menu-selected"><a href="blog.html" class="text-menu-selected"><i class="fas fa-file-alt"></i>Blog</a></li>
+                        <li><a href="contacto.html"><i class="fas fa-home"></i> Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="ctn-icon-search">
+                <i class="fas fa-search" id="icon-search"></i>
+            </div>
+        </div>
+        <div id="icon-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <div id="ctn-bars-search">
+        <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+    </div>
+
+    <ul id="box-search">
+        <li><a href="git-init.html"><i class="fas fa-search"></i>git init</a></li>
+        <li><a href="git-add.html"><i class="fas fa-search"></i>git add</a></li>
+        <li><a href="git-commit.html"><i class="fas fa-search"></i>git commit</a></li>
+        <li><a href="git-push.html"><i class="fas fa-search"></i>git push</a></li>
+        <li><a href="git-pull.html"><i class="fas fa-search"></i>git pull</a></li>
+        <li><a href="git-clone.html"><i class="fas fa-search"></i>git clone</a></li>
+        <li><a href="git-merge.html"><i class="fas fa-search"></i>git merge</a></li>
+        <li><a href="git-branch-d.html"><i class="fas fa-search"></i>git branch</a></li>
+    </ul>
+
+    <div id="cover-ctn-search"></div>
+
+    <!--Portada-->
+    <div class="container-all" id="move-content">
+        <div class="article-container-cover">
+            <div class="container-info-cover">
+                <h1>¡Domina Git con nuestra guía!</h1>
+                <p>Aprende a usar Git, el sistema de control de versiones más popular, para gestionar tus proyectos de desarrollo de manera eficiente.</p>
+            </div>
+        </div>
+    
+        <div id="contenido" class="container-content">
+            <article>
+
+            <h1>Introducción a Git</h1>
+
+            <p>Git es un sistema de control de versiones distribuido, utilizado principalmente para el desarrollo de software. Fue creado por Linus Torvalds en 2005. Git permite a los desarrolladores llevar un registro de los cambios en el código fuente a lo largo del tiempo, facilitando la colaboración y la gestión de proyectos complejos.</p>
+
+            <p>Una de las características más destacadas de Git es su capacidad para gestionar múltiples ramas de desarrollo, lo que permite a los equipos trabajar en diferentes características o versiones de un proyecto simultáneamente. A continuación, exploraremos algunos de los comandos más utilizados en Git.</p>
+
+            <h1>Comandos básicos de Git</h1>
+
+            <h2>git init</h2>
+            <p>El comando `git init` se utiliza para inicializar un nuevo repositorio de Git. Esto crea un nuevo subdirectorio `.git` en el directorio actual, que contiene todos los archivos necesarios del repositorio, básicamente una estructura de repositorio vacía.</p>
+
+            <h2>git clone</h2>
+            <p>El comando `git clone <url_del_repositorio>` se usa para clonar un repositorio remoto a tu máquina local. Esto copia todos los archivos, ramas y commits del repositorio remoto a tu máquina.</p>
+
+            <h2>git add</h2>
+            <p>El comando `git add <nombre_archivo>` agrega cambios en el directorio de trabajo al área de preparación. Este es el primer paso en el proceso de registrar cambios en el repositorio.</p>
+
+            <h2>git commit</h2>
+            <p>El comando `git commit -m "<mensaje>"` se usa para registrar los cambios en el repositorio. Un commit es una instantánea del estado del proyecto en un momento dado, con un mensaje descriptivo que explica qué cambios se han hecho.</p>
+
+            <h2>git status</h2>
+            <p>El comando `git status` muestra el estado actual del repositorio, incluyendo los cambios que se han hecho pero no se han registrado (commit), y los archivos que no están siendo rastreados por Git.</p>
+
+            <h2>git push</h2>
+            <p>El comando `git push origin <nombre_rama>` se utiliza para enviar los commits locales a un repositorio remoto. Esto actualiza el repositorio remoto con los cambios hechos en la rama especificada.</p>
+
+            <img src="img/comandos.png" alt="Comandos básicos de Git">
+
+            <h1>Colaboración con Git</h1>
+
+            <p>Git facilita la colaboración entre desarrolladores a través de ramas y merges. Los desarrolladores pueden trabajar en ramas separadas y luego fusionar sus cambios en la rama principal o en otras ramas de características.</p>
+
+            <h2>git branch</h2>
+            <p>El comando `git branch` lista todas las ramas en el repositorio. Las ramas permiten trabajar en diferentes versiones de un proyecto simultáneamente.</p>
+
+            <h2>git merge</h2>
+            <p>El comando `git merge <nombre_rama>` fusiona los cambios de la rama especificada en la rama actual. Esto es útil para integrar cambios de diferentes líneas de desarrollo.</p>
+
+            <p>Con estos comandos y conceptos básicos, puedes empezar a utilizar Git para gestionar tus proyectos de desarrollo de manera más eficiente y colaborativa.</p>
+
+        </article>
+
+        <div class="container-aside">    
+
+            <aside>
+                <img src="img/git_guia.png" alt="Git Tutorial">
+                <h2>Guía completa de Git</h2>
+                <p>Explora nuestra guía completa para dominar todos los aspectos de Git, desde los comandos básicos hasta las técnicas avanzadas de colaboración.</p>
+                <a href="git-guia.html"><button>Leer más</button></a>
+            </aside>
+
+            <aside>
+                <img src="img/git breaching.png" alt="Git Branching">
+                <h2>Trabajando con ramas en Git</h2>
+                <p>Aprende a crear, gestionar y fusionar ramas en Git para mejorar tu flujo de trabajo y colaboración en proyectos de desarrollo.</p>
+
+            </aside>
+
+            <aside>
+                <img src="img/rebase.png" alt="Git Rebase">
+                <h2>Uso de rebase en Git</h2>
+                <p>Descubre cómo utilizar `git rebase` para mantener un historial de commits limpio y fácil de seguir.</p>
+                <a href="git_rebase.html"><button>Leer más</button></a>
+            </aside>
+
+        </div>
+    </div>
+
+    <div class="container-footer">    
+
+        <footer>
+            <div class="logo-footer">
+                <img src="img/git_logo_.png" alt="Logo Git Wiki">
+            </div>
+
+            <div class="redes-footer">
+                <a href="#"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
+            </div>
+
+            <hr>
+            <h4>© 2024 GitWiki - Todos los Derechos Reservados</h4>
+
+        </footer>
+
+    </div>
+
+</div>
+</body>
+</html>

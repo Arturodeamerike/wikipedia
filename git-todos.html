@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comandos de Git</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Comandos de Git</h1>
+    <p>Esta página contiene una lista de comandos comunes de Git y sus descripciones.</p>
+    
+    <h2>Lista de Comandos</h2>
+    <ul>
+      <li>
+        <strong><code>git init</code></strong>
+        <p>Inicializa un nuevo repositorio de Git.</p>
+      </li>
+      <li>
+        <strong><code>git clone &lt;url_del_repositorio&gt;</code></strong>
+        <p>Clona un repositorio remoto a tu máquina local.</p>
+      </li>
+      <li>
+        <strong><code>git add &lt;nombre_archivo&gt;</code></strong>
+        <p>Añade un archivo a la zona de preparación (staging area).</p>
+      </li>
+      <li>
+        <strong><code>git commit -m "&lt;mensaje&gt;"</code></strong>
+        <p>Confirma los cambios en la zona de preparación con un mensaje descriptivo.</p>
+      </li>
+      <li>
+        <strong><code>git status</code></strong>
+        <p>Muestra el estado de los archivos en el directorio de trabajo y la zona de preparación.</p>
+      </li>
+      <li>
+        <strong><code>git push origin &lt;nombre_rama&gt;</code></strong>
+        <p>Envía los commits de la rama local especificada al repositorio remoto.</p>
+      </li>
+      <li>
+        <strong><code>git pull</code></strong>
+        <p>Descarga los cambios del repositorio remoto y los fusiona con la rama actual.</p>
+      </li>
+      <li>
+        <strong><code>git pull --rebase</code></strong>
+        <p>Descarga los cambios del repositorio remoto y aplica los commits locales encima de los cambios remotos.</p>
+      </li>
+      <li>
+        <strong><code>git fetch</code></strong>
+        <p>Descarga los cambios del repositorio remoto pero no los fusiona automáticamente.</p>
+      </li>
+      <li>
+        <strong><code>git merge &lt;nombre_rama&gt;</code></strong>
+        <p>Fusiona la rama especificada con la rama actual.</p>
+      </li>
+      <li>
+        <strong><code>git branch</code></strong>
+        <p>Lista todas las ramas locales en el repositorio.</p>
+      </li>
+      <li>
+        <strong><code>git checkout -b &lt;nombre_rama_nueva&gt;</code></strong>
+        <p>Crea una nueva rama y cambia a esa rama.</p>
+      </li>
+      <li>
+        <strong><code>git checkout -t origin/&lt;nombre_rama&gt;</code></strong>
+        <p>Crea una nueva rama local para rastrear una rama remota con el mismo nombre.</p>
+      </li>
+      <li>
+        <strong><code>git branch -a</code></strong>
+        <p>Lista todas las ramas, incluidas las ramas remotas.</p>
+      </li>
+      <li>
+        <strong><code>git branch -d &lt;nombre_rama&gt;</code></strong>
+        <p>Elimina la rama especificada.</p>
+      </li>
+      <li>
+        <strong><code>git remote prune origin</code></strong>
+        <p>Elimina las referencias a las ramas remotas que ya no existen.</p>
+      </li>
+      <li>
+        <strong><code>git reset --hard HEAD</code></strong>
+        <p>Deshace todos los cambios en el directorio de trabajo que no se han confirmado.</p>
+      </li>
+      <li>
+        <strong><code>git revert &lt;hash_commit&gt;</code></strong>
+        <p>Crea un nuevo commit que deshace el commit especificado.</p>
+      </li>
+    </ul>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

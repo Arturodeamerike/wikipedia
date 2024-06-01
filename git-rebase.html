@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uso de `git pull --rebase`</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Usando <code>git pull --rebase</code> para Integrar Cambios del Repositorio Remoto</h1>
+    <p>El comando <code>git pull --rebase</code> es una herramienta útil en Git que permite actualizar la rama actual con los cambios del repositorio remoto, aplicando los cambios locales encima de los cambios remotos. Este enfoque asegura que el historial de commits sea más lineal y fácil de seguir. A continuación, se presenta una guía detallada sobre el uso de <code>git pull --rebase</code>, su importancia en el flujo de trabajo de desarrollo y buenas prácticas para utilizar este comando de manera efectiva.</p>
+    
+    <h2>¿Qué es <code>git pull --rebase</code>?</h2>
+    <p>El comando <code>git pull --rebase</code> se utiliza para integrar cambios desde el repositorio remoto en la rama actual. A diferencia de <code>git pull</code>, que realiza una fusión (merge), <code>git pull --rebase</code> aplica los commits locales encima de los commits remotos, creando un historial más lineal y limpio. Esto es especialmente útil en equipos de desarrollo donde se desea mantener un historial de commits claro y sin múltiples ramas de fusión.</p>
+
+    <h2>Ventajas de Usar <code>git pull --rebase</code></h2>
+    <ul>
+      <li><strong>Historial de Commits Lineal:</strong> Mantiene el historial de commits más limpio y fácil de seguir al evitar merges innecesarios.</li>
+      <li><strong>Facilita la Revisión de Código:</strong> Hace que la revisión de cambios sea más sencilla al mantener un historial lineal.</li>
+      <li><strong>Resuelve Conflictos de Forma Ordenada:</strong> Al reordenar los commits locales, los conflictos se pueden resolver de manera más organizada.</li>
+    </ul>
+
+    <h2>Uso Básico de <code>git pull --rebase</code></h2>
+    <p>Para utilizar <code>git pull --rebase</code>, sigue estos pasos:</p>
+    <ol>
+      <li>
+        <strong>Abrir la Terminal o Símbolo del sistema:</strong>
+        <ul>
+          <li>En sistemas Unix (Linux, macOS), abre una terminal.</li>
+          <li>En Windows, utiliza PowerShell o el Símbolo del sistema.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Navegar al Directorio del Proyecto:</strong>
+        <pre><code>cd ruta/a/tu/proyecto</code></pre>
+      </li>
+      <li>
+        <strong>Verificar el Estado del Repositorio:</strong>
+        <pre><code>git status</code></pre>
+        <p>Este comando muestra el estado actual del repositorio y confirma en qué rama estás trabajando.</p>
+      </li>
+      <li>
+        <strong>Ejecutar <code>git pull --rebase</code>:</strong>
+        <pre><code>git pull --rebase origin main</code></pre>
+        <p>Este comando obtiene los cambios del repositorio remoto y aplica los commits locales encima de los cambios remotos en la rama <code>main</code>.</p>
+      </li>
+    </ol>
+
+    <h2>Verificación de la Rebase</h2>
+    <p>Después de ejecutar <code>git pull --rebase</code>, es importante verificar que la rebase se haya realizado correctamente. Utiliza los siguientes comandos para verificar:</p>
+    <ul>
+      <li><strong>Verificar el Historial de Commits:</strong>
+        <pre><code>git log</code></pre>
+        <p>Este comando muestra el historial de commits, confirmando que los commits locales se han aplicado encima de los commits remotos.</p>
+      </li>
+      <li><strong>Verificar el Estado del Repositorio:</strong>
+        <pre><code>git status</code></pre>
+        <p>Este comando muestra el estado actual del repositorio, confirmando que no hay conflictos sin resolver.</p>
+      </li>
+    </ul>
+
+    <h2>Ejemplos Prácticos del Uso de <code>git pull --rebase</code></h2>
+    <p>A continuación se presentan algunos ejemplos prácticos del uso de <code>git pull --rebase</code>:</p>
+    <ul>
+      <li><strong>Actualizar la Rama Principal:</strong>
+        <pre><code>git pull --rebase origin main</code></pre>
+        <p>Este comando obtiene y aplica los cambios remotos de la rama <code>main</code> a la rama local actual.</p>
+      </li>
+      <li><strong>Rebasar Cambios desde una Rama Remota Específica:</strong>
+        <pre><code>git pull --rebase origin desarrollo</code></pre>
+        <p>Este comando obtiene y aplica los cambios de la rama remota <code>desarrollo</code> a la rama local actual.</p>
+      </li>
+    </ul>
+
+    <h2>Buenas Prácticas con <code>git pull --rebase</code></h2>
+    <ul>
+      <li><strong>Realiza Commits Frecuentes:</strong> Realiza commits frecuentes y descriptivos para mantener un historial claro y facilitar la rebase.</li>
+      <li><strong>Verifica el Estado del Repositorio:</strong> Utiliza <code>git status</code> antes de ejecutar <code>git pull --rebase</code> para asegurarte de que no hay cambios no comiteados.</li>
+      <li><strong>Resuelve Conflictos Inmediatamente:</strong> Si encuentras conflictos durante la rebase, resuélvelos inmediatamente para mantener el flujo de trabajo limpio.</li>
+      <li><strong>Documenta los Cambios:</strong> Mantén una documentación clara de los cambios realizados para facilitar la colaboración en equipo.</li>
+    </ul>
+
+    <h2>Consejos Avanzados para <code>git pull --rebase</code></h2>
+    <p>Para aprovechar al máximo el comando <code>git pull --rebase</code>, considera estos consejos avanzados:</p>
+    <ul>
+      <li><strong>Utiliza Aliases:</strong> Configura aliases en Git para abreviar comandos comunes, como <code>git pull --rebase</code> para facilitar su uso.</li>
+      <li><strong>Combina con <code>git stash</code>:</strong> Utiliza <code>git stash</code> para guardar temporalmente los cambios no comiteados antes de ejecutar <code>git pull --rebase</code> y luego recuperarlos con <code>git stash pop</code>.</li>
+      <li><strong>Automatiza Rebaselines:</strong> Configura scripts o herramientas de automatización para realizar rebaselines regulares y mantener el historial de commits limpio.</li>
+      <li><strong>Aprende a Usar <code>git rebase --onto</code>:</strong> Familiarízate con el comando <code>git rebase --onto</code> para manejar rebaselines más complejas.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+    <p>El comando <code>git pull --rebase</code> es una herramienta valiosa para mantener un historial de commits lineal y limpio en Git. Al utilizar este comando, puedes integrar cambios remotos de manera eficiente y aplicar tus commits locales encima de los cambios remotos, mejorando la claridad del historial del proyecto. Implementar buenas prácticas y seguir los consejos avanzados mencionados te permitirá manejar rebaselines de manera efectiva y mantener un flujo de trabajo colaborativo y ordenado. Recuerda siempre verificar el estado del repositorio antes de realizar una rebase y documentar los cambios realizados para facilitar la colaboración en equipo.</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

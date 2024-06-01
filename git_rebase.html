@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Uso de `git rebase` en Git</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #eee;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        li:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Uso de `git rebase` en Git</h1>
+        <p>Descubre cómo utilizar <code>git rebase</code> para mantener un historial de commits limpio y fácil de seguir.</p>
+        <ul>
+            <li><a href="#que-es-rebase">¿Qué es git rebase?</a></li>
+            <li><a href="#como-usarlo">Cómo usar git rebase</a></li>
+            <li><a href="#rebase-interactivo">Rebase interactivo</a></li>
+            <li><a href="#precauciones">Precauciones al usar rebase</a></li>
+        </ul>
+
+        <section id="que-es-rebase">
+            <h2>¿Qué es git rebase?</h2>
+            <p><code>git rebase</code> es un comando que permite mover o combinar una secuencia de commits a una nueva base de commits. Es útil para mantener un historial de commits limpio y lineal.</p>
+            <pre><code>git rebase &lt;base_commit&gt;</code></pre>
+        </section>
+
+        <section id="como-usarlo">
+            <h2>Cómo usar git rebase</h2>
+            <p>Para hacer un rebase de la rama actual sobre otra rama, usa el siguiente comando:</p>
+            <pre><code>git rebase &lt;nombre_rama&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git rebase main</code></pre>
+            <p>Este comando moverá los commits de la rama actual sobre la rama <code>main</code>.</p>
+        </section>
+
+        <section id="rebase-interactivo">
+            <h2>Rebase interactivo</h2>
+            <p>El rebase interactivo permite editar el historial de commits de manera más granular. Para iniciarlo, usa:</p>
+            <pre><code>git rebase -i &lt;base_commit&gt;</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code>git rebase -i HEAD~3</code></pre>
+            <p>Este comando iniciará un rebase interactivo de los últimos 3 commits.</p>
+            <p>En el editor, puedes elegir entre varias opciones como <code>pick</code>, <code>reword</code>, <code>edit</code>, <code>squash</code>, y <code>fixup</code>.</p>
+        </section>
+
+        <section id="precauciones">
+            <h2>Precauciones al usar rebase</h2>
+            <p>Al usar <code>git rebase</code>, especialmente en repositorios compartidos, ten en cuenta lo siguiente:</p>
+            <ul>
+                <li>Evita hacer rebase en ramas que ya han sido publicadas o compartidas.</li>
+                <li>Prefiere usar <code>git merge</code> en situaciones donde múltiples desarrolladores estén colaborando en la misma rama.</li>
+            </ul>
+            <p>En caso de conflictos durante el rebase, Git te permitirá resolverlos antes de continuar.</p>
+        </section>
+    </div>
+</body>
+</html>

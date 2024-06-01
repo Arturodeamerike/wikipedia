@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia sobre Git</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/blog.css">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+</head>
+<body>
+
+    <!--Header - menu-->
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo">
+                <h1>Git<b>Wiki</b></h1>
+            </div>
+
+            <div class="menu" id="show-menu">
+
+                <nav>
+                    <ul>
+                      <li><a href="inicio.html"><i class="fa fa-home"></i> Inicio</a></li>
+                        <li class="menu-selected"><a href="blog.html" class="text-menu-selected"> 
+                            <i class="fas fa-file-alt"></i>Blog</a></li>
+                        <li><a href="contacto.html"><i class="fas fa-home"></i> Contacto</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <div id="ctn-icon-search">
+                <i class="fas fa-search" id="icon-search"></i>
+            </div>
+
+        </div>
+
+        <div id="icon-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+      </header>
+
+
+      <div id="ctn-bars-search">
+          <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+      </div>
+  
+      <ul id="box-search">
+          <li><a href="git-init.html"><i class="fas fa-search"></i>git init</a></li>
+          <li><a href="git-add.html"><i class="fas fa-search"></i>git add</a></li>
+          <li><a href="git-commit.html"><i class="fas fa-search"></i>git commit</a></li>
+          <li><a href="git-push.html"><i class="fas fa-search"></i>git push</a></li>
+          <li><a href="git-pull.html"><i class="fas fa-search"></i>git pull</a></li>
+          <li><a href="git-clone.html"><i class="fas fa-search"></i>git clone</a></li>
+          <li><a href="git-merge.html"><i class="fas fa-search"></i>git merge</a></li>
+          <li><a href="git-branch-d.html"><i class="fas fa-search"></i>git branch</a></li>
+      </ul>
+  
+      <div id="cover-ctn-search"></div>
+
+    <!--Portada-->
+
+    <div class="container-all" id="move-content">
+
+
+    <div class="blog-container-cover">
+        <div class="container-info-cover">
+            <h1>¡Encuentra tu comando Git!</h1>
+            <p>Explora la documentación y aprende a utilizar Git de manera efectiva.</p>
+        </div>
+    </div>
+
+    <div class="container-post">
+
+        <input type="radio" id="TODOS" name="categories" value="TODOS" checked>
+        <input type="radio" id="INIT" name="categories" value="INIT">
+        <input type="radio" id="ADD" name="categories" value="ADD">
+        <input type="radio" id="COMMIT" name="categories" value="COMMIT">
+        <input type="radio" id="PUSH" name="categories" value="PUSH">
+        <input type="radio" id="PULL" name="categories" value="PULL">
+        <input type="radio" id="CLONE" name="categories" value="CLONE">
+        <input type="radio" id="MERGE" name="categories" value="MERGE">
+
+        <div class="container-category">
+          <li><a href="git-todos.html" class="btn-custom btn-todos"><i class="fa fa-code-branch"></i> TODOS</a></li>
+          <li><a href="git-add.html" class="btn-custom btn-add"><i class="fa fa-plus"></i> git add</a></li>
+          <li><a href="git-commit.html" class="btn-custom btn-commit"><i class="fa fa-check"></i> git commit</a></li>
+          <li><a href="git-push.html" class="btn-custom btn-push"><i class="fa fa-upload"></i> git push</a></li>
+          <li><a href="git-pull.html" class="btn-custom btn-pull"><i class="fa fa-download"></i> git pull</a></li>
+          <li><a href="git-clone.html" class="btn-custom btn-clone"><i class="fa fa-clone"></i> git clone</a></li>
+          <li><a href="git-merge.html" class="btn-custom btn-merge"><i class="fa fa-compress"></i> git merge</a></li>
+          <li><a href="git-status.html" class="btn-custom btn-status"><i class="fa fa-info"></i> git status</a></li>
+          <li><a href="git-fork.html" class="btn-custom btn-fork"><i class="fa fa-code-fork"></i> git fork</a></li>
+          <li><a href="git-branch-a.html" class="btn-custom btn-branch-a"><i class="fa fa-tree"></i> git branch -a</a></li>
+          <li><a href="git-branch-d.html" class="btn-custom btn-branch-d"><i class="fa fa-cut"></i> git branch -d</a></li>
+          <li><a href="git-fetch.html" class="btn-custom btn-fetch"><i class="fa fa-cloud-download"></i> git fetch</a></li>
+          <li><a href="git-checkout-t.html" class="btn-custom btn-checkout-t"><i class="fa fa-arrow-circle-o-right"></i> git checkout -t</a></li>
+          <li><a href="git-checkout-b.html" class="btn-custom btn-checkout-b"><i class="fa fa-arrow-circle-o-left"></i> git checkout -b</a></li>
+          <li><a href="git-rebase.html" class="btn-custom btn-rebase"><i class="fa fa-level-up"></i> git rebase</a></li>
+          <li><a href="git-reset.html" class="btn-custom btn-reset"><i class="fa fa-refresh"></i> git reset</a></li>
+          <li><a href="git-revert.html" class="btn-custom btn-revert"><i class="fa fa-undo"></i> git revert</a></li>
+
+        <div class="posts">
+
+            <div class="post" data-category="INIT">
+
+                <div class="ctn-img">
+                    <img src="img/git_init.png" alt="">
+                </div>
+                <h2>Cómo inicializar un repositorio con git init</h2>
+                <span>30 mayo 2024 - 9:00 am</span>
+                <ul class="ctn-tag">
+                    <li>git init</li>
+                </ul>
+                <a href="articulo.html"><button>Leer más</button></a>
+
+            </div>
+
+            <div class="post" data-category="ADD">
+
+                <div class="ctn-img"><img src="img/git_add.png" alt=""></div>
+                <h2>Cómo agregar archivos al índice con git add</h2>
+                <span>30 mayo 2024 - 9:00 am</span>
+                <ul class="ctn-tag">
+                    <li>git add</li>
+                </ul>
+                <a href="#"><button>leer más</button></a>
+
+            </div>
+
+            <div class="post" data-category="COMMIT">
+
+                <div class="ctn-img"><img src="img/git-commit.png" alt=""></div>
+                <h2>Cómo confirmar cambios con git commit</h2>
+                <span>30 mayo 2024 - 9:00 am</span>
+                <ul class="ctn-tag">
+                    <li>git commit</li>
+                </ul>
+                <a href="#"><button>leer más</button></a>
+
+            </div>
+
+            <div class="post" data-category="PUSH">
+
+                <div class="ctn-img"><img src="img/git_push.png" alt=""></div>
+                <h2>Cómo subir cambios al repositorio remoto con git push</h2>
+                <span>30 mayo 2024 - 9:00 am</span>
+                <ul class="ctn-tag">
+                    <li>git push</li>
+                </ul>
+                <a href="#"><button>leer más</button></a>
+
+            </div>
+
+            <div class="post" data-category="PULL">
+
+                <div class="ctn-img"><img src="img/git_pull.png" alt=""></div>
+                <h2>Cómo obtener y fusionar cambios del repositorio remoto con git pull</h2>
+                <span>30 mayo 2024 - 9:00 am</span>
+                <ul class="ctn-tag">
+                    <li>git pull</li>
+                </ul>
+                <a href="#"><button>leer más</button></a>
+
+            </div>
+
+            <div class="post" data-category="CLONE">
+
+                <div class="ctn-img"><img src="img/clone.png" alt=""></div>
+                <h2>Cómo clonar un repositorio con git clone</h2>
+                <span>30 mayo 2024 - 9:00 am</span>
+                <ul class="ctn-tag">
+                    <li>git clone</li>
+                </ul>
+                <a href="#"><button>leer más</button></a>
+
+            </div>
+
+            <div class="post" data-category="MERGE">
+
+                <div class="ctn-img"><img src="img/merge.png" alt=""></div>
+                <h2>Cómo fusionar ramas con git merge</h2>
+                <span>30 mayo 2024 - 9:00 am</span>
+                <ul class="ctn-tag">
+                    <li>git merge</li>
+                </ul>
+                <a href="#"><button>leer más</button></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container-footer">    
+
+        <footer>
+            <div class="logo-footer">
+                <img src="img/wikipedia.png" alt="">
+            </div>
+
+            <div class="redes-footer">
+                <a href="#"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g icon-redes-footer"></i></a>
+                <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
+            </div>
+
+            <hr>
+            <h4>© 2024 GitWiki - Todos los Derechos Reservados</h4>
+
+        </footer>
+
+    </div>
+
+</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

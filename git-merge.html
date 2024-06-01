@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uso de `git merge`</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Usando <code>git merge &lt;nombre_rama&gt;</code> para Impactar los Cambios de otra Rama en la Rama Actual</h1>
+    <p>El comando <code>git merge &lt;nombre_rama&gt;</code> es una herramienta fundamental en Git que permite combinar los cambios realizados en una rama especificada con la rama actual en la que te encuentras. A continuación, se presenta una guía detallada sobre el uso de <code>git merge</code>, junto con ejemplos prácticos y su relevancia en el flujo de trabajo diario.</p>
+    
+    <h2>¿Qué es <code>git merge</code>?</h2>
+    <p>El comando <code>git merge</code> se utiliza para fusionar los cambios de una rama específica (<code>&lt;nombre_rama&gt;</code>) en la rama actual. Este proceso combina los historiales de las dos ramas, permitiendo integrar las funcionalidades desarrolladas por separado. Es una práctica común en el desarrollo de software colaborativo, donde diferentes ramas se utilizan para trabajar en distintas características o correcciones de errores.</p>
+
+    <h2>Ventajas de Usar <code>git merge</code></h2>
+    <ul>
+      <li><strong>Integración de Funcionalidades:</strong> Permite combinar diferentes líneas de desarrollo, integrando nuevas funcionalidades o correcciones de errores en la rama principal.</li>
+      <li><strong>Historial de Cambios:</strong> Mantiene un historial claro y detallado de los cambios realizados, facilitando el seguimiento y la revisión del código.</li>
+      <li><strong>Colaboración Efectiva:</strong> Facilita el trabajo colaborativo al permitir que varios desarrolladores trabajen en paralelo y luego fusionen sus cambios.</li>
+    </ul>
+
+    <h2>Uso Básico de <code>git merge</code></h2>
+    <p>Para utilizar <code>git merge</code>, sigue estos pasos:</p>
+    <ol>
+      <li>
+        <strong>Abrir la Terminal o Símbolo del sistema:</strong>
+        <ul>
+          <li>En sistemas Unix (Linux, macOS), abre una terminal.</li>
+          <li>En Windows, utiliza PowerShell o el Símbolo del sistema.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Navegar al Directorio del Proyecto:</strong>
+        <pre><code>cd ruta/a/tu/proyecto</code></pre>
+      </li>
+      <li>
+        <strong>Verificar en qué Rama te Encuentras:</strong>
+        <pre><code>git branch</code></pre>
+        <p>Este comando lista todas las ramas locales y marca con un asterisco (*) la rama actual.</p>
+      </li>
+      <li>
+        <strong>Ejecutar <code>git merge &lt;nombre_rama&gt;</code>:</strong>
+        <pre><code>git merge nombre_rama</code></pre>
+        <p>Este comando fusiona los cambios de la rama <code>nombre_rama</code> en la rama actual.</p>
+      </li>
+    </ol>
+
+    <h2>Verificación de la Fusión</h2>
+    <p>Después de ejecutar <code>git merge</code>, puedes verificar que la fusión se ha realizado correctamente utilizando comandos como <code>git log</code> y <code>git status</code> para revisar el historial de commits y el estado de los archivos.</p>
+    <ul>
+      <li><strong>Mostrar el Registro de Commits:</strong></li>
+      <pre><code>git log</code></pre>
+      <p>Este comando muestra el historial de commits, donde deberías ver los commits de la rama fusionada.</p>
+      <li><strong>Revisar el Estado del Repositorio:</strong></li>
+      <pre><code>git status</code></pre>
+      <p>Este comando muestra el estado actual del repositorio, indicando si hay archivos modificados o pendientes de añadir.</p>
+    </ul>
+
+    <h2>Integrar Cambios de una Rama</h2>
+    <p>Una vez que has fusionado los cambios, es importante probar y verificar que la integración ha sido exitosa y que el proyecto sigue funcionando correctamente. Aquí tienes un ejemplo práctico:</p>
+    <ol>
+      <li>
+        <strong>Inicializar el Repositorio y Conectar al Remoto:</strong>
+        <pre><code>git init
+git remote add origin https://github.com/usuario/mi-proyecto.git</code></pre>
+      </li>
+      <li>
+        <strong>Crear una Rama para una Nueva Funcionalidad:</strong>
+        <pre><code>git checkout -b nueva-funcionalidad</code></pre>
+      </li>
+      <li>
+        <strong>Desarrollar la Nueva Funcionalidad:</strong>
+        <pre><code># Realiza cambios en tu código...
+git add .
+git commit -m "Añadir nueva funcionalidad"</code></pre>
+      </li>
+      <li>
+        <strong>Cambiar a la Rama Principal:</strong>
+        <pre><code>git checkout main</code></pre>
+      </li>
+      <li>
+        <strong>Fusionar los Cambios de la Nueva Funcionalidad:</strong>
+        <pre><code>git merge nueva-funcionalidad</code></pre>
+      </li>
+      <li>
+        <strong>Verificar la Fusión:</strong>
+        <pre><code>git log
+git status</code></pre>
+      </li>
+    </ol>
+
+    <h2>Resolución de Conflictos</h2>
+    <p>Al trabajar con <code>git merge</code>, es posible que encuentres conflictos. Un conflicto ocurre cuando los mismos archivos han sido modificados en ambas ramas de maneras incompatibles. Aquí tienes algunos pasos para resolver conflictos:</p>
+    <ol>
+      <li><strong>Identificar los Conflictos:</strong> Git te notificará los archivos en conflicto después de intentar fusionar.</li>
+      <li><strong>Editar los Archivos en Conflicto:</strong> Abre los archivos en conflicto y decide qué cambios mantener. Git marcará los conflictos en el archivo, mostrando las versiones locales y remotas.</li>
+      <li><strong>Marcar los Conflictos como Resueltos:</strong> Después de resolver los conflictos, marca los archivos como resueltos con:</li>
+      <pre><code>git add nombre_del_archivo</code></pre>
+      <li><strong>Finalizar la Fusión:</strong> Completa la fusión con:</li>
+      <pre><code>git commit</code></pre>
+    </ol>
+
+    <h2>Fusiones Avanzadas con Estrategias</h2>
+    <p>Git ofrece varias estrategias de fusión que pueden ser útiles en diferentes escenarios:</p>
+    <ul>
+      <li><strong>Recursive:</strong> Esta es la estrategia predeterminada que Git usa para la mayoría de las fusiones. Combina los cambios automáticamente.</li>
+      <li><strong>Ours:</strong> Esta estrategia usa los cambios de la rama actual y descarta los cambios de la rama especificada.</li>
+      <li><strong>Octopus:</strong> Esta estrategia permite fusionar múltiples ramas en una sola operación, útil para integraciones complejas.</li>
+    </ul>
+
+    <h2>Ejemplo Avanzado de Fusión</h2>
+    <p>Supongamos que estás trabajando en un proyecto con múltiples colaboradores. Cada colaborador trabaja en su propia rama para desarrollar nuevas funcionalidades. Para mantener tu trabajo sincronizado y evitar conflictos, es importante utilizar <code>git merge</code> correctamente. Aquí te mostramos un ejemplo avanzado:</p>
+    <ol>
+      <li>
+        <strong>Inicializar el Repositorio y Conectar al Remoto:</strong>
+        <pre><code>git init
+git remote add origin https://github.com/usuario/proyecto-colaborativo.git</code></pre>
+      </li>
+      <li>
+        <strong>Crear una Rama para una Nueva Funcionalidad:</strong>
+        <pre><code>git checkout -b nueva-funcionalidad</code></pre>
+      </li>
+      <li>
+        <strong>Desarrollar la Nueva Funcionalidad:</strong>
+        <pre><code># Realiza cambios en tu código...
+git add .
+git commit -m "Añadir nueva funcionalidad"</code></pre>
+      </li>
+      <li>
+        <strong>Cambiar a la Rama Principal:</strong>
+        <pre><code>git checkout main</code></pre>
+      </li>
+      <li>
+        <strong>Descargar Cambios del Repositorio Remoto:</strong>
+        <pre><code>git fetch origin</code></pre>
+      </li>
+      <li>
+        <strong>Fusionar Cambios de la Rama Remota Principal:</strong>
+        <pre><code>git merge origin/main</code></pre>
+      </li>
+      <li>
+        <strong>Fusionar los Cambios de la Nueva Funcionalidad:</strong>
+        <pre><code>git merge nueva-funcionalidad</code></pre>
+      </li>
+      <li>
+        <strong>Resolver Conflictos si es Necesario:</strong>
+        <pre><code># Edita los archivos en conflicto...
+git add archivo-resuelto
+git commit -m "Resolver conflictos durante la fusión"</code></pre>
+      </li>
+    </ol>
+
+    <h2>Buenas Prácticas con <code>git merge</code></h2>
+    <ul>
+      <li><strong>Realiza Commits Frecuentemente:</strong> Mantén un historial claro y detallado de los cambios realizando commits frecuentes con mensajes descriptivos.</li>
+      <li><strong>Revisa los Cambios Antes de Fusionar:</strong> Utiliza comandos como <code>git diff</code> y <code>git log</code> para entender los cambios antes de fusionar.</li>
+      <li><strong>Usa Ramas para Nuevas Funcionalidades:</strong> Crea ramas específicas para desarrollar nuevas funcionalidades o correcciones de errores. Esto facilita la gestión y la colaboración en el proyecto.</li>
+      <li><strong>Prueba el Código Después de la Fusión:</strong> Asegúrate de que el código funciona correctamente después de fusionar los cambios realizando pruebas exhaustivas.</li>
+      <li><strong>Documenta las Fusiones:</strong> Mantén un registro claro y descriptivo de las fusiones realizadas en el proyecto para facilitar la revisión y seguimiento del historial del proyecto.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+    <p>El comando <code>git merge &lt;nombre_rama&gt;</code> es una herramienta esencial en Git que permite integrar cambios de diferentes ramas de desarrollo. Usado correctamente, <code>git merge</code> facilita la colaboración efectiva entre desarrolladores y mantiene un historial claro y organizado de los cambios realizados en el proyecto. Siguiendo las buenas prácticas y utilizando las estrategias de fusión adecuadas, podrás gestionar eficazmente el desarrollo de tus proyectos y evitar conflictos.</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
